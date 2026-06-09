@@ -5,26 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sneakers</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
+    <!-- font cdn links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,300&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
-            <div class="logo"><a href="">sneakers</a></div>
-            <div class="nav-bittons-list">
-                <ul>
-                    <li><a href="">Collections</a></li>
-                    <li><a href="">Men</a></li>
-                    <li><a href="">Women</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Contact</a></li>
-                </ul>
+    <header class="main-container">
+        <div class="navbar flex-center   ">
+            <div class="nav-left-section flex-center">
+                <div class="logo"><a href=""><img src="assets/sneakers-logo.svg" alt="sneakers-logo" /></a></div>
+                <div class="nav-buttons-list flex-center">
+                    <ul class="flex-center">
+                        <li><a href="">Collections</a></li>
+                        <li><a href="">Men</a></li>
+                        <li><a href="">Women</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="nav-right-section">
-                <span>
+            <div class="nav-right-section flex-center">
+                <span class="cart-icon">
+<span class="cart-qty-icon">0</span>
                     <a href="">
-                        <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none"
+                        <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_15_35)">
                                 <rect width="24" height="24" fill="white" />
@@ -45,19 +54,173 @@
                         </svg>
                     </a>
                 </span>
-                <span>
+                <span class="image-avatar">
                     <a href="#">
                         <img src="assets/image-avatar.png" alt="" />
                     </a>
                 </span>
+
+
+                <!-- cart overlay  -->
+                <div class="cart-overlay">
+                    <div class="cart-heading">
+                        <h3>Cart</h3>
+                    </div>
+                    <!-- empty cart section  -->
+                    <div class="empty-message">
+                        <p>Your cart is empty</p>
+                    </div>
+
+                    <!-- products cart section  -->
+                    <div class="cart-product-section">
+                        <div class="cart-product-img">
+                            <span><img src="assets/image-product-1.jpg" alt="products" /></span>
+                        </div>
+                        <div class="cart-middle-section">
+                            <div class="cart-description">Autumn Limited Edition Sneakers</div>
+                            <div class="cart-price-section">
+                                <span class="cart-price">$125.00</span>
+                                <span>x</span>
+                                <span class="cart-qty">1</span>
+                                <span class="cart-total">$125.00</span>
+                            </div>
+
+                        </div>
+                        <div class="cart-delete-icon">
+                            <span>
+                                <svg width="14" height="16" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <defs>
+                                        <path
+                                            d="M0 2.625V1.75C0 1.334.334 1 .75 1h3.5l.294-.584A.741.741 0 0 1 5.213 0h3.571a.75.75 0 0 1 .672.416L9.75 1h3.5c.416 0 .75.334.75.75v.875a.376.376 0 0 1-.375.375H.375A.376.376 0 0 1 0 2.625Zm13 1.75V14.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 1 14.5V4.375C1 4.169 1.169 4 1.375 4h11.25c.206 0 .375.169.375.375ZM4.5 6.5c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Z"
+                                            id="a" />
+                                    </defs>
+                                    <use fill="#C3CAD9" fill-rule="nonzero" xlink:href="#a" />
+                                </svg>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
-
+        </div>
     </header>
-    <main>
+    <main class="main-container">
+        <section class="product-container">
+            <div class="product-section">
+                <!-- images container div  -->
+                <div class="images-container">
+                    <!-- main-image  -->
+                    <div class="main-image"><img src="assets/image-product-1.jpg" alt="" /></div>
+                    <!-- preview-container  -->
+                    <div class="preview-container">
+                        <span><img src="assets/image-product-1.jpg" alt="preview-image" /></span>
+                        <span><img src="assets/image-product-2.jpg" alt="preview-image" /></span>
+                        <span><img src="assets/image-product-3.jpg" alt="preview-image" /></span>
+                        <span><img src="assets/image-product-4.jpg" alt="preview-image" /></span>
+                    </div>
+                </div>
+
+                <!-- description container  -->
+                <div class="description-container">
+                    <h3 class="company-name">Sneaker Company</h3>
+                    <h1 class="main-heading">Fall Limited Edition Sneakers</h1>
+                    <div class="product-description">These low-profile sneakers are your perfect casual wear companion.
+                        Featuring a durable rubber outer
+                        sole, they’ll withstand everything the weather can offer.
+                    </div>
+                    <div class="price-wrapper">
+                        <span class="price">$125.00</span><span class="discount">50%</span>
+                    </div>
+                    <div class="full-price-container"><span class="full-price">$250.00</span></div>
+                    <div class="buttons-wrapper">
+                        <div class="quantity-btn-container">
+                            <button class="input-btns "><span class="" id="decrementbtn">-</span></button><span
+                                class="input-btns quantity" id="qty">0</span><button class="input-btns"><span class=""
+                                    id="incrementbtn">+</span></button>
+                        </div>
+                        <!-- add-to-cart-btn  -->
+                        <button class="add-to-cart-btn">
+                            <span>
+                                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_15_35)">
+                                        <rect width="24" height="24" fill="none" />
+                                        <path
+                                            d="M5.33331 6H19.8672C20.4687 6 20.9341 6.52718 20.8595 7.12403L20.1095 13.124C20.0469 13.6245 19.6215 14 19.1172 14H16.5555H9.44442H7.99998"
+                                            stroke="white" stroke-linejoin="round" />
+                                        <path
+                                            d="M2 4H4.23362C4.68578 4 5.08169 4.30341 5.19924 4.74003L8.30076 16.26C8.41831 16.6966 8.81422 17 9.26638 17H19"
+                                            stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                        <circle cx="10" cy="20" r="1" stroke="white" stroke-linejoin="round" />
+                                        <circle cx="17.5" cy="20" r="1" stroke="white" stroke-linejoin="round" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_15_35">
+                                            <rect width="24" height="24" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                            <span>Add to cart</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- product-preview-overlay  -->
+            <div class="product-preview-overlay">
+                <div class="overlay-wrapper">
+                    <div class="overlay-top">
+                        <!-- close button  -->
+                        <button>
+                            <svg width="44px" height="44px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M697.4 759.2l61.8-61.8L573.8 512l185.4-185.4-61.8-61.8L512 450.2 326.6 264.8l-61.8 61.8L450.2 512 264.8 697.4l61.8 61.8L512 573.8z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- images  -->
+                    <div class="overlay-images-wrapper">
+                        <div class=" overlay-img"><img src="assets/image-product-1.jpg" alt="preview-image" />
+                            <div class="overlay-btn-container">
+                                <button class="overlay-btn-left overlay-btn">
+                                    <span>
+                                        <svg width="20" height="16" viewBox="0 0 18 29" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M0.580078 13.1484C0 13.7285 0 14.6953 0.580078 15.2754L13.084 27.8438C13.7285 28.4238 14.6953 28.4238 15.2754 27.8438L16.7578 26.3613C17.3379 25.7812 17.3379 24.8145 16.7578 24.1699L6.83203 14.1797L16.7578 4.25391C17.3379 3.60938 17.3379 2.64258 16.7578 2.0625L15.2754 0.580078C14.6953 0 13.7285 0 13.084 0.580078L0.580078 13.1484Z"
+                                                fill="black" />
+                                        </svg>
+                                    </span>
+                                </button>
+                                <button class="overlay-btn-right overlay-btn">
+                                    <span>
+                                        <svg width="20" height="16" viewBox="0 0 18 29" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16.7578 15.2754C17.3379 14.6953 17.3379 13.7285 16.7578 13.1484L4.25391 0.580078C3.60938 0 2.64258 0 2.0625 0.580078L0.580078 2.0625C0 2.64258 0 3.60938 0.580078 4.25391L10.5059 14.1797L0.580078 24.1699C0 24.8145 0 25.7812 0.580078 26.3613L2.0625 27.8438C2.64258 28.4238 3.60938 28.4238 4.25391 27.8438L16.7578 15.2754Z"
+                                                fill="black" />
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="overlay-preview preview-container">
+                            <span><img src="assets/image-product-1.jpg" alt="preview-image" /></span>
+                            <span><img src="assets/image-product-2.jpg" alt="preview-image" /></span>
+                            <span><img src="assets/image-product-3.jpg" alt="preview-image" /></span>
+                            <span><img src="assets/image-product-4.jpg" alt="preview-image" /></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
     </footer>
+    <script src="js.js"></script>
 </body>
 
 </html>
