@@ -17,7 +17,16 @@
 <body>
     <header class="main-container">
         <div class="navbar flex-center   ">
-            <div class="nav-left-section flex-center">
+            <div class=" flex-center nav-left-section">
+                <!-- hamburger icon  -->
+                    <button class="hamburger" id="hamburger">
+                            <svg width="16px" height="16px" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z" fill="#69707D"
+                                    fill-rule="evenodd" />
+                            </svg>
+                    </button>
+
+                <!-- navbar      -->
                 <div class="logo"><a href=""><img src="assets/sneakers-logo.svg" alt="sneakers-logo" /></a></div>
                 <div class="nav-buttons-list flex-center">
                     <ul class="flex-center">
@@ -31,7 +40,7 @@
             </div>
             <div class="nav-right-section flex-center">
                 <span class="cart-icon">
-<span class="cart-qty-icon">0</span>
+                    <span class="cart-qty-icon">0</span>
                     <a href="">
                         <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -62,17 +71,17 @@
 
 
                 <!-- cart overlay  -->
-                <div class="cart-overlay">
-                    <div class="cart-heading">
+                <!-- <div class="cart-overlay"> -->
+                <!-- <div class="cart-heading">
                         <h3>Cart</h3>
-                    </div>
-                    <!-- empty cart section  -->
-                    <div class="empty-message">
+                    </div> -->
+                <!-- empty cart section  -->
+                <!-- <div class="empty-message">
                         <p>Your cart is empty</p>
-                    </div>
+                    </div> -->
 
-                    <!-- products cart section  -->
-                    <div class="cart-product-section">
+                <!-- products cart section  -->
+                <!-- <div class="cart-product-section">
                         <div class="cart-product-img">
                             <span><img src="assets/image-product-1.jpg" alt="products" /></span>
                         </div>
@@ -100,11 +109,27 @@
                             </span>
                         </div>
 
-                    </div>
-                </div>
+                    </div> -->
+                <!-- </div>  -->
             </div>
         </div>
-        </div>
+        <aside class="nav-sidebar" id="sidebar">
+            <ul>
+                <li>
+                    <button class="closeSidebar" id="closeSidebar"><svg width="32px" height="32px"
+                            viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M697.4 759.2l61.8-61.8L573.8 512l185.4-185.4-61.8-61.8L512 450.2 326.6 264.8l-61.8 61.8L450.2 512 264.8 697.4l61.8 61.8L512 573.8z" />
+                        </svg>
+                    </button>
+                </li>
+                <li><a href="">Collections</a></li>
+                <li><a href="">Men</a></li>
+                <li><a href="">Women</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </aside>
     </header>
     <main class="main-container">
         <section class="product-container">
@@ -112,7 +137,30 @@
                 <!-- images container div  -->
                 <div class="images-container">
                     <!-- main-image  -->
-                    <div class="main-image"><img src="assets/image-product-1.jpg" alt="" /></div>
+                    <div class="main-image"><img src="assets/image-product-1.jpg" alt="" />
+                        <div class="mobile-img-slider-btns">
+                            <button class="mobile-btn-left mobile-btn">
+                                <span>
+                                    <svg width="20" height="16" viewBox="0 0 18 29" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.580078 13.1484C0 13.7285 0 14.6953 0.580078 15.2754L13.084 27.8438C13.7285 28.4238 14.6953 28.4238 15.2754 27.8438L16.7578 26.3613C17.3379 25.7812 17.3379 24.8145 16.7578 24.1699L6.83203 14.1797L16.7578 4.25391C17.3379 3.60938 17.3379 2.64258 16.7578 2.0625L15.2754 0.580078C14.6953 0 13.7285 0 13.084 0.580078L0.580078 13.1484Z"
+                                            fill="black" />
+                                    </svg>
+                                </span>
+                            </button>
+                            <button class="mobile-btn-right mobile-btn">
+                                <span>
+                                    <svg width="20" height="16" viewBox="0 0 18 29" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M16.7578 15.2754C17.3379 14.6953 17.3379 13.7285 16.7578 13.1484L4.25391 0.580078C3.60938 0 2.64258 0 2.0625 0.580078L0.580078 2.0625C0 2.64258 0 3.60938 0.580078 4.25391L10.5059 14.1797L0.580078 24.1699C0 24.8145 0 25.7812 0.580078 26.3613L2.0625 27.8438C2.64258 28.4238 3.60938 28.4238 4.25391 27.8438L16.7578 15.2754Z"
+                                            fill="black" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
                     <!-- preview-container  -->
                     <div class="preview-container">
                         <span><img src="assets/image-product-1.jpg" alt="preview-image" /></span>
@@ -130,10 +178,12 @@
                         Featuring a durable rubber outer
                         sole, they’ll withstand everything the weather can offer.
                     </div>
-                    <div class="price-wrapper">
-                        <span class="price">$125.00</span><span class="discount">50%</span>
+                    <div class="product-description-body">
+                        <div class="price-wrapper">
+                            <span class="price">$125.00</span><span class="discount">50%</span>
+                        </div>
+                        <div class="full-price-container"><span class="full-price">$250.00</span></div>
                     </div>
-                    <div class="full-price-container"><span class="full-price">$250.00</span></div>
                     <div class="buttons-wrapper">
                         <div class="quantity-btn-container">
                             <button class="input-btns "><span class="" id="decrementbtn">-</span></button><span
@@ -220,7 +270,7 @@
     </main>
     <footer>
     </footer>
-    <script src="js.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

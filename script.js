@@ -12,3 +12,16 @@ decrementBtn.addEventListener('click', () => {
         qty.textContent = val;
     }
 })
+
+// navbar sidebar
+const closeSidebar = document.getElementById('closeSidebar')
+const hamburger = document.getElementById('hamburger')
+const sidebar = document.getElementById('sidebar')
+
+hamburger.addEventListener('click', ()=>{
+    sidebar.classList.toggle('nav-active')
+})
+
+closeSidebar.addEventListener('click', ()=>{
+    sidebar.classList.toggle('nav-active')
+})
