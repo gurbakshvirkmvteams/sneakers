@@ -393,7 +393,10 @@ a {
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 15px 15px 5px rgba(0, 0, 0, .2);
+    z-index: 2;
+    display: none;
 }
+
 
 .cart-heading {
     padding: 24px;
@@ -488,7 +491,9 @@ a {
     font-size: 10px;
     color: white;
 }
-
+.cart-active{
+display: block;
+}
 @media (max-width:1440px) {
 
 
