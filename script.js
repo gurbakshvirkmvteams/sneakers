@@ -1,6 +1,7 @@
 const incrementBtn = document.getElementById('incrementbtn')
 const decrementBtn = document.getElementById('decrementbtn')
 const qty = document.getElementById('qty')
+const price = 125
 var val = 1;
 incrementBtn.addEventListener('click', () => {
     val++;
@@ -36,6 +37,8 @@ addToCart.addEventListener('click', () => {
         cart++
     }
     cartQtyIcon.innerText = cart;
+     cartOverlay.classList.add("cart-active")
+    cartProduct()
 })
 
 // view cart section 
@@ -45,11 +48,10 @@ const emptyMessage = document.getElementById('emptyMessage')
 const cartProductSection = document.getElementById('cartProductSection')
 const cartOverlayContainer = document.querySelector('.cart-overlay-container');
 
-cartBtnIcon.addEventListener('click', () => {
-    cartOverlay.classList.toggle("cart-active")
-    if (cart > 0) {
+const cartProduct = () =>{
+if (cart > 0) {
         cartOverlayContainer.innerHTML =
-                     `
+            `
                         <div class="cart-product-section" id="cartProductSection">
                             <div class="cart-product-img">
                                 <span><img src="assets/image-product-1.jpg" alt="products" /></span>
@@ -57,12 +59,11 @@ cartBtnIcon.addEventListener('click', () => {
                             <div class="cart-middle-section">
                                 <div class="cart-description">Autumn Limited Edition Sneakers</div>
                                 <div class="cart-price-section">
-                                    <span class="cart-price">$125.00</span>
+                                    <span class="cart-price">$${price}</span>
                                     <span>x</span>
-                                    <span class="cart-qty">1</span>
-                                    <span class="cart-total">$125.00</span>
+                                    <span class="cart-qty">${cart}</span>
+                                    <span class="cart-total">$${price * cart}</span>
                                 </div>
-
                             </div>
                             <div class="cart-delete-icon" id="cartEmpty" >
                                 <span>
@@ -79,35 +80,106 @@ cartBtnIcon.addEventListener('click', () => {
                             </div>
                         </div>
                     `
-                    const cartEmpty = document.getElementById('cartEmpty');
-                    cartEmpty.addEventListener('click', ()=>{
-                        alert('cart delete')
-                        cart = 0;
-                        cartOverlayContainer.innerHTML = 
-                                                            `
-                                                                <div class="empty-message" id="emptyMessage">
-                                                                    <p>Your cart is empty</p>
-                                                                </div>
-                                                            `
-                    })
+        const cartEmpty = document.getElementById('cartEmpty');
+        cartEmpty.addEventListener('click', () => {
+            cart = 0;
+            cartQtyIcon.innerText = cart;
+            cartOverlayContainer.innerHTML =
+                `
+                    <div class="empty-message" id="emptyMessage">
+                        <p>Your cart is empty</p>
+                    </div>
+                `
+        })
     } else {
-        cartOverlayContainer.innerHTML = 
-                                        `
+        cartOverlayContainer.innerHTML =
+            `
                                             <div class="empty-message" id="emptyMessage">
                                                 <p>Your cart is empty</p>
                                             </div>
                                         `
     }
+}
+cartBtnIcon.addEventListener('click', () => {
+    cartOverlay.classList.toggle("cart-active")
+    cartProduct()
 })
 
+// products overlay toggle
 const mainImage = document.getElementById('mainImage');
 const productPreviewOverlay = document.getElementById('productPreviewOverlay')
 const closeProductPreview = document.getElementById('closeProductPreview')
-
-
-mainImage.addEventListener('click', ()=>{
+mainImage.addEventListener('click', () => {
     productPreviewOverlay.classList.toggle('cart-active')
 })
-closeProductPreview.addEventListener('click', ()=>{
+closeProductPreview.addEventListener('click', () => {
     productPreviewOverlay.classList.toggle('cart-active')
 })
+
+// preview-image-btns
+const previewImageBtns = document.querySelectorAll('.preview-image-btns');
+const previewMainImg = document.getElementById('previewMainImg');
+previewImageBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        previewImageBtns.forEach((btn) => {
+            btn.classList.remove('img-btn-active')
+        })
+        btn.classList.add('img-btn-active')
+        let imgLocation = btn.innerHTML
+        previewMainImg.innerHTML = imgLocation
+    });
+})
+
+const imageBtns = document.querySelectorAll('.image-btns')
+imageBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        imageBtns.forEach((btn) => {
+            btn.classList.remove('img-btn-active')
+        })
+        btn.classList.add('img-btn-active')
+        let imgLocation = btn.innerHTML
+        mainImage.innerHTML = imgLocation
+    })
+})
+
+//slider buttons
+const sliderBtnRight = document.getElementById('sliderBtnRight')
+const sliderBtnLeft = document.getElementById('sliderBtnLeft')
+const overlaysliderBtnRight = document.getElementById('overlaysliderBtnRight')
+const overlaysliderBtnLeft = document.getElementById('overlaysliderBtnLeft')
+
+// console.log(imageBtns[1].innerHTML)
+let index = 0
+updateimg = () => {
+    previewMainImg.innerHTML = previewImageBtns[index].innerHTML;
+    mainImage.innerHTML = imageBtns[index].innerHTML;
+       previewImageBtns.forEach((img)=>{
+        img.classList.remove('img-btn-active')
+       })
+       previewImageBtns[index].classList.add('img-btn-active')
+}
+increaseIndex = () => {
+    index++;
+    if (index >= imageBtns.length) {
+        index = 0;
+    }
+    updateimg();
+}
+decreaseIndex = () => {
+    if (index > 0) {
+        index--;
+    }
+    updateimg();
+}
+sliderBtnRight.addEventListener("click", () => {
+    increaseIndex()
+});
+overlaysliderBtnRight.addEventListener("click", () => {
+    increaseIndex()
+});
+sliderBtnLeft.addEventListener("click", () => {
+    decreaseIndex()
+});
+overlaysliderBtnLeft.addEventListener("click", () => {
+    decreaseIndex()
+});

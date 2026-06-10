@@ -39,29 +39,28 @@
             </div>
             <div class="nav-right-section flex-center">
                 <button class="cart-icon" id="cartBtnIcon">
-                
+
                     <span class="cart-qty-icon" id="cartQtyIcon">0</span>
-                        <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_15_35)">
+                    <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_15_35)">
+                            <rect width="24" height="24" fill="white" />
+                            <path
+                                d="M5.33331 6H19.8672C20.4687 6 20.9341 6.52718 20.8595 7.12403L20.1095 13.124C20.0469 13.6245 19.6215 14 19.1172 14H16.5555H9.44442H7.99998"
+                                stroke="#000000" stroke-linejoin="round" />
+                            <path
+                                d="M2 4H4.23362C4.68578 4 5.08169 4.30341 5.19924 4.74003L8.30076 16.26C8.41831 16.6966 8.81422 17 9.26638 17H19"
+                                stroke="#000000" stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="10" cy="20" r="1" stroke="#000000" stroke-linejoin="round" />
+                            <circle cx="17.5" cy="20" r="1" stroke="#000000" stroke-linejoin="round" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_15_35">
                                 <rect width="24" height="24" fill="white" />
-                                <path
-                                    d="M5.33331 6H19.8672C20.4687 6 20.9341 6.52718 20.8595 7.12403L20.1095 13.124C20.0469 13.6245 19.6215 14 19.1172 14H16.5555H9.44442H7.99998"
-                                    stroke="#000000" stroke-linejoin="round" />
-                                <path
-                                    d="M2 4H4.23362C4.68578 4 5.08169 4.30341 5.19924 4.74003L8.30076 16.26C8.41831 16.6966 8.81422 17 9.26638 17H19"
-                                    stroke="#000000" stroke-linecap="round" stroke-linejoin="round" />
-                                <circle cx="10" cy="20" r="1" stroke="#000000" stroke-linejoin="round" />
-                                <circle cx="17.5" cy="20" r="1" stroke="#000000" stroke-linejoin="round" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_15_35">
-                                    <rect width="24" height="24" fill="white" />
-                                </clipPath>
-                            </defs>
-                        </svg>
-                    
-                    </button>
+                            </clipPath>
+                        </defs>
+                    </svg>
+
+                </button>
                 <span class="image-avatar">
                     <a href="#">
                         <img src="assets/image-avatar.png" alt="" />
@@ -105,9 +104,13 @@
                 <!-- images container div  -->
                 <div class="images-container">
                     <!-- main-image  -->
-                    <div class="main-image" id="mainImage"><button><img src="assets/image-product-1.jpg" alt="" /></button>
+                    <div class="main-image">
+                        <button id="mainImage" class="mainImage">
+                            <img src="assets/image-product-1.jpg" alt="preview-image" />
+                        </button>
+
                         <div class="mobile-img-slider-btns">
-                            <button class="mobile-btn-left mobile-btn">
+                            <button class="mobile-btn-left mobile-btn" id="sliderBtnLeft">
                                 <span>
                                     <svg width="20" height="16" viewBox="0 0 18 29" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -117,7 +120,7 @@
                                     </svg>
                                 </span>
                             </button>
-                            <button class="mobile-btn-right mobile-btn">
+                            <button class="mobile-btn-right mobile-btn" id="sliderBtnRight">
                                 <span>
                                     <svg width="20" height="16" viewBox="0 0 18 29" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -131,13 +134,20 @@
                     </div>
                     <!-- preview-container  -->
                     <div class="preview-container">
-                        <span><button><img src="assets/image-product-1.jpg" alt="preview-image" /></button></span>
-                        <span><button><img src="assets/image-product-2.jpg" alt="preview-image" /></button></span>
-                        <span><button><img src="assets/image-product-3.jpg" alt="preview-image" /></button></span>
-                        <span><button><img src="assets/image-product-4.jpg" alt="preview-image" /></button></span>
+                        <span><button class="image-btns img-btn-active">
+                                <img src="assets/image-product-1.jpg" data-index="0" alt="preview-image" />
+                            </button></span>
+                        <span><button class="image-btns">
+                                <img src="assets/image-product-2.jpg" data-index="1" alt="preview-image" />
+                            </button></span>
+                        <span><button class="image-btns">
+                                <img src="assets/image-product-3.jpg" data-index="2" alt="preview-image" />
+                            </button></span>
+                        <span><button class="image-btns">
+                                <img src="assets/image-product-4.jpg" data-index="3" alt="preview-image" />
+                            </button></span>
                     </div>
                 </div>
-
                 <!-- description container  -->
                 <div class="description-container">
                     <h3 class="company-name">Sneaker Company</h3>
@@ -200,9 +210,11 @@
                     </div>
                     <!-- images  -->
                     <div class="overlay-images-wrapper">
-                        <div class=" overlay-img"><button><img src="assets/image-product-1.jpg" alt="preview-image" /></button>
+                        <div class="overlay-img"><button id="previewMainImg">
+                                <img src="assets/image-product-1.jpg" alt="preview-image" />
+                            </button>
                             <div class="overlay-btn-container">
-                                <button class="overlay-btn-left overlay-btn" >
+                                <button class="overlay-btn-left overlay-btn" id="overlaysliderBtnLeft">
                                     <span>
                                         <svg width="20" height="16" viewBox="0 0 18 29" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -212,7 +224,7 @@
                                         </svg>
                                     </span>
                                 </button>
-                                <button class="overlay-btn-right overlay-btn">
+                                <button class="overlay-btn-right overlay-btn" id="overlaysliderBtnRight">
                                     <span>
                                         <svg width="20" height="16" viewBox="0 0 18 29" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -226,10 +238,14 @@
                         </div>
 
                         <div class="overlay-preview preview-container">
-                            <span><button><img src="assets/image-product-1.jpg" alt="preview-image" /></button></span>
-                            <span><button><img src="assets/image-product-2.jpg" alt="preview-image" /></button></span>
-                            <span><button><img src="assets/image-product-3.jpg" alt="preview-image" /></button></span>
-                            <span><button><img src="assets/image-product-4.jpg" alt="preview-image" /></button></span>
+                            <span><button class="preview-image-btns"><img src="assets/image-product-1.jpg"
+                                        alt="preview-image" /></button></span>
+                            <span><button class="preview-image-btns"><img src="assets/image-product-2.jpg"
+                                        alt="preview-image" /></button></span>
+                            <span><button class="preview-image-btns"><img src="assets/image-product-3.jpg"
+                                        alt="preview-image" /></button></span>
+                            <span><button class="preview-image-btns"><img src="assets/image-product-4.jpg"
+                                        alt="preview-image" /></button></span>
                         </div>
                     </div>
                 </div>
