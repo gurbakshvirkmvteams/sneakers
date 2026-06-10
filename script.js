@@ -1,13 +1,13 @@
 const incrementBtn = document.getElementById('incrementbtn')
 const decrementBtn = document.getElementById('decrementbtn')
 const qty = document.getElementById('qty')
-var val = 0;
+var val = 1;
 incrementBtn.addEventListener('click', () => {
     val++;
     qty.textContent = val;
 })
 decrementBtn.addEventListener('click', () => {
-    if (val >= 1) {
+    if (val >= 2) {
         val--;
         qty.textContent = val;
     }
@@ -100,7 +100,14 @@ cartBtnIcon.addEventListener('click', () => {
     }
 })
 
-// const handleDelete = () => {
-//     console.log("deleted");
-    
-// }
+const mainImage = document.getElementById('mainImage');
+const productPreviewOverlay = document.getElementById('productPreviewOverlay')
+const closeProductPreview = document.getElementById('closeProductPreview')
+
+
+mainImage.addEventListener('click', ()=>{
+    productPreviewOverlay.classList.toggle('cart-active')
+})
+closeProductPreview.addEventListener('click', ()=>{
+    productPreviewOverlay.classList.toggle('cart-active')
+})

@@ -105,7 +105,7 @@
                 <!-- images container div  -->
                 <div class="images-container">
                     <!-- main-image  -->
-                    <div class="main-image"><img src="assets/image-product-1.jpg" alt="" />
+                    <div class="main-image" id="mainImage"><button><img src="assets/image-product-1.jpg" alt="" /></button>
                         <div class="mobile-img-slider-btns">
                             <button class="mobile-btn-left mobile-btn">
                                 <span>
@@ -131,10 +131,10 @@
                     </div>
                     <!-- preview-container  -->
                     <div class="preview-container">
-                        <span><img src="assets/image-product-1.jpg" alt="preview-image" /></span>
-                        <span><img src="assets/image-product-2.jpg" alt="preview-image" /></span>
-                        <span><img src="assets/image-product-3.jpg" alt="preview-image" /></span>
-                        <span><img src="assets/image-product-4.jpg" alt="preview-image" /></span>
+                        <span><button><img src="assets/image-product-1.jpg" alt="preview-image" /></button></span>
+                        <span><button><img src="assets/image-product-2.jpg" alt="preview-image" /></button></span>
+                        <span><button><img src="assets/image-product-3.jpg" alt="preview-image" /></button></span>
+                        <span><button><img src="assets/image-product-4.jpg" alt="preview-image" /></button></span>
                     </div>
                 </div>
 
@@ -155,7 +155,7 @@
                     <div class="buttons-wrapper">
                         <div class="quantity-btn-container">
                             <button class="input-btns "><span class="" id="decrementbtn">-</span></button><span
-                                class="input-btns quantity" id="qty">0</span><button class="input-btns"><span class=""
+                                class="input-btns quantity" id="qty">1</span><button class="input-btns"><span class=""
                                     id="incrementbtn">+</span></button>
                         </div>
                         <!-- add-to-cart-btn  -->
@@ -187,11 +187,11 @@
                 </div>
             </div>
             <!-- product-preview-overlay  -->
-            <div class="product-preview-overlay">
+            <div class="product-preview-overlay" id="productPreviewOverlay">
                 <div class="overlay-wrapper">
                     <div class="overlay-top">
                         <!-- close button  -->
-                        <button>
+                        <button id="closeProductPreview">
                             <svg width="44px" height="44px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M697.4 759.2l61.8-61.8L573.8 512l185.4-185.4-61.8-61.8L512 450.2 326.6 264.8l-61.8 61.8L450.2 512 264.8 697.4l61.8 61.8L512 573.8z" />
@@ -200,9 +200,9 @@
                     </div>
                     <!-- images  -->
                     <div class="overlay-images-wrapper">
-                        <div class=" overlay-img"><img src="assets/image-product-1.jpg" alt="preview-image" />
+                        <div class=" overlay-img"><button><img src="assets/image-product-1.jpg" alt="preview-image" /></button>
                             <div class="overlay-btn-container">
-                                <button class="overlay-btn-left overlay-btn">
+                                <button class="overlay-btn-left overlay-btn" >
                                     <span>
                                         <svg width="20" height="16" viewBox="0 0 18 29" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -226,10 +226,10 @@
                         </div>
 
                         <div class="overlay-preview preview-container">
-                            <span><img src="assets/image-product-1.jpg" alt="preview-image" /></span>
-                            <span><img src="assets/image-product-2.jpg" alt="preview-image" /></span>
-                            <span><img src="assets/image-product-3.jpg" alt="preview-image" /></span>
-                            <span><img src="assets/image-product-4.jpg" alt="preview-image" /></span>
+                            <span><button><img src="assets/image-product-1.jpg" alt="preview-image" /></button></span>
+                            <span><button><img src="assets/image-product-2.jpg" alt="preview-image" /></button></span>
+                            <span><button><img src="assets/image-product-3.jpg" alt="preview-image" /></button></span>
+                            <span><button><img src="assets/image-product-4.jpg" alt="preview-image" /></button></span>
                         </div>
                     </div>
                 </div>
