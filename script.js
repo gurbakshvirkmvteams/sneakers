@@ -43,7 +43,7 @@ const cartBtnIcon = document.getElementById('cartBtnIcon')
 const cartOverlay = document.getElementById('cartOverlay')
 const emptyMessage = document.getElementById('emptyMessage')
 const cartProductSection = document.getElementById('cartProductSection')
-const cartOverlayContainer = document.querySelector('.cart-overlay-container')
+const cartOverlayContainer = document.querySelector('.cart-overlay-container');
 
 cartBtnIcon.addEventListener('click', () => {
     cartOverlay.classList.toggle("cart-active")
@@ -64,7 +64,7 @@ cartBtnIcon.addEventListener('click', () => {
                                 </div>
 
                             </div>
-                            <div class="cart-delete-icon" id="cartEmpty">
+                            <div class="cart-delete-icon" id="cartEmpty" >
                                 <span>
                                     <svg width="14" height="16" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -79,6 +79,17 @@ cartBtnIcon.addEventListener('click', () => {
                             </div>
                         </div>
                     `
+                    const cartEmpty = document.getElementById('cartEmpty');
+                    cartEmpty.addEventListener('click', ()=>{
+                        alert('cart delete')
+                        cart = 0;
+                        cartOverlayContainer.innerHTML = 
+                                                            `
+                                                                <div class="empty-message" id="emptyMessage">
+                                                                    <p>Your cart is empty</p>
+                                                                </div>
+                                                            `
+                    })
     } else {
         cartOverlayContainer.innerHTML = 
                                         `
@@ -89,16 +100,7 @@ cartBtnIcon.addEventListener('click', () => {
     }
 })
 
-// empty cart button 
-const cartEmpty = document.getElementById('cartEmpty')
-console.log(cartEmpty)
-// cartEmpty.addEventListener('click', ()=>{
-//     alert('cart delete')
-//     cart = 0;
-//     cartOverlayContainer.innerHTML = 
-//                                         `
-//                                             <div class="empty-message" id="emptyMessage">
-//                                                 <p>Your cart is empty</p>
-//                                             </div>
-//                                         `
-// })
+// const handleDelete = () => {
+//     console.log("deleted");
+    
+// }
